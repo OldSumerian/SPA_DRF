@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "drf-spa"
+version = "0.1.0"
+description = ""
+authors = ["Sumerian <shemerov.s@yandex.ru>"]
+readme = "README.md"
+packages = [{include = "drf_spa"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^5.1"
+psycopg2-binary = "^2.9.9"
+djangorestframework = "^3.15.2"
+python-dotenv = "^1.0.1"
+black = "^24.8.0"
+djangorestframework-simplejwt = "^5.3.1"
+coverage = "^7.6.1"
+django-cors-headers = "^4.4.0"
+drf-spectacular = "^0.27.2"
+flake8 = "^7.1.1"
+requests = "^2.32.3"
+celery = "^5.4.0"
+redis = "^5.0.8"
+eventlet = "^0.36.1"
+django-celery-beat = "^2.7.0"
+responses = "^0.25.3"
+freezegun = "^1.5.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

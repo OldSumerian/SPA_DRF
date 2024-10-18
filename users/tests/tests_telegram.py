@@ -82,7 +82,7 @@ class TestCase(APITestCase):
 
     @responses.activate
     def test_get_chat_id_not_ok(self):
-        username = "ChurilovEvgeny"
+        username = "OldSumerian"
         body = '{"ok":true,"result":[]}'
 
         responses.add(
@@ -140,7 +140,7 @@ class TestCase(APITestCase):
     @responses.activate
     def test_update_chat_id_exists(self):
         user = User.objects.create(
-            email="user@my.ru", tg_name="ChurilovEvgeny", tg_chat_id=1
+            email="user@my.ru", tg_name="OldSumerian", tg_chat_id=1
         )
         update_chat_id(user)
         self.assertEqual(user.tg_chat_id, 1)
@@ -148,16 +148,16 @@ class TestCase(APITestCase):
     @responses.activate
     def test_update_chat_id_new_chat_id(self):
         user = User.objects.create(
-            email="user@my.ru", tg_name="ChurilovEvgeny", tg_chat_id=0
+            email="user@my.ru", tg_name="OldSumerian", tg_chat_id=0
         )
 
         body = (
             '{"ok":true,"result":[{"update_id":24152962,"message":'
             '{"message_id":3,"from":{"id":111111111,"is_bot":false,'
-            '"first_name":"Evgeny","last_name":"Churilov","username":'
-            '"ChurilovEvgeny","language_code":"ru"},"chat":'
-            '{"id":111111111,"first_name":"Evgeny","last_name":'
-            '"Churilov","username":"ChurilovEvgeny","type":"private"},'
+            '"first_name":"Sergey","last_name":"Shemerov","username":'
+            '"OldSumerian","language_code":"ru"},"chat":'
+            '{"id":111111111,"first_name":"Sergey","last_name":'
+            '"Shemerov","username":"OldSumerian","type":"private"},'
             '"date":1725895346,"text":"sddds"}}]}'
         )
 
